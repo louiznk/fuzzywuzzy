@@ -12,7 +12,7 @@ import me.xdrop.diffutils.structs.OpCode;
  */
 public class DiffUtils {
 
-    public static EditOp[] getEditOps(String s1, String s2) {
+    private static EditOp[] getEditOps(String s1, String s2) {
         return getEditOps(s1.length(), s1, s2.length(), s2);
     }
 

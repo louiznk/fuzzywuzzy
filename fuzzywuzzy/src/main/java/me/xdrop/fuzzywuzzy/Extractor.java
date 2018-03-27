@@ -81,7 +81,7 @@ public class Extractor {
     public List<ExtractedResult> extractTop(String query, Collection<String> choices, Applicable func) {
 
         List<ExtractedResult> best = extractWithoutOrder(query, choices, func);
-        Collections.sort(best, Collections.<ExtractedResult>reverseOrder());
+        best.sort(Collections.reverseOrder());
 
         return best;
     }

@@ -2,7 +2,7 @@ package me.xdrop.fuzzywuzzy.algorithms
 
 import me.xdrop.fuzzywuzzy.StringProcessor
 
-import static org.easymock.EasyMock.*;
+import static org.easymock.EasyMock.*
 
 class WeightedRatioTest extends GroovyTestCase {
 

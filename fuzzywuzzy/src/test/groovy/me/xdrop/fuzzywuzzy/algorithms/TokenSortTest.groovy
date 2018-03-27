@@ -29,7 +29,7 @@ class TokenSortTest extends GroovyTestCase {
 
     void testUsesRatio() {
 
-        def ts = new TokenSort();
+        def ts = new TokenSort()
 
         def mock = createMock(Ratio)
 
@@ -45,7 +45,7 @@ class TokenSortTest extends GroovyTestCase {
 
     void testTokenSort() {
 
-        def ts = new TokenSort();
+        def ts = new TokenSort()
 
         assertEquals 75, ts.apply("test", "pesticide", new PartialRatio())
         assertEquals 46, ts.apply("test", "pesticide", new SimpleRatio())

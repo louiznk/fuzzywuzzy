@@ -48,7 +48,7 @@ final public class Utils {
     }
 
     public static <T extends Comparable<T>> List<T> findTopKHeap(List<T> arr, int k) {
-        PriorityQueue<T> pq = new PriorityQueue<T>();
+        PriorityQueue<T> pq = new PriorityQueue<>();
 
         for (T x : arr) {
             if (pq.size() < k) pq.add(x);
@@ -68,6 +68,7 @@ final public class Utils {
 
     }
 
+    @SafeVarargs
     static <T extends Comparable<? super T>> T max(T ... elems) {
 
         if (elems.length == 0) return null;

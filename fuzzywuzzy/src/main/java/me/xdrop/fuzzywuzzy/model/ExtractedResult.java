@@ -3,7 +3,7 @@ package me.xdrop.fuzzywuzzy.model;
 public class ExtractedResult implements Comparable<ExtractedResult> {
 
     private String string;
-    private int score;
+    private final int score;
     private int index;
 
     public ExtractedResult(String string, int score) {

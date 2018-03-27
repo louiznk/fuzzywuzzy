@@ -69,8 +69,8 @@ class FuzzySearchTest extends GroovyTestCase {
 
     void testExtractTop() {
 
-        def res = FuzzySearch.extractTop("goolge", choices, 2);
-        def res2 = FuzzySearch.extractTop("goolge", choices, new SimpleRatio(), 2);
+        def res = FuzzySearch.extractTop("goolge", choices, 2)
+        def res2 = FuzzySearch.extractTop("goolge", choices, new SimpleRatio(), 2)
 
         assert res.size() == 2
         assert res.get(0).string == "google" && res.get(1).string == "googleplus"
@@ -84,7 +84,7 @@ class FuzzySearchTest extends GroovyTestCase {
 
     void testExtractAll() {
 
-        def res = FuzzySearch.extractAll("goolge", choices);
+        def res = FuzzySearch.extractAll("goolge", choices)
 
         assert res.size() == choices.size()
         assert res.get(0).string == "google"
@@ -95,7 +95,7 @@ class FuzzySearchTest extends GroovyTestCase {
 
     void testExtractSorted() {
 
-        def res = FuzzySearch.extractSorted("goolge", choices);
+        def res = FuzzySearch.extractSorted("goolge", choices)
 
         assert res.size() == choices.size()
         assert res.get(0).string == "google"
@@ -108,8 +108,8 @@ class FuzzySearchTest extends GroovyTestCase {
 
     void testExtractOne() {
 
-        def res = FuzzySearch.extractOne("twiter", choices, new SimpleRatio());
-        def res2 = FuzzySearch.extractOne("twiter", choices);
+        def res = FuzzySearch.extractOne("twiter", choices, new SimpleRatio())
+        def res2 = FuzzySearch.extractOne("twiter", choices)
         def res3 = FuzzySearch.extractOne("cowboys", moreChoices)
 
         assert res.string == "twitter"

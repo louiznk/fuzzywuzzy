@@ -26,7 +26,7 @@ class TokenSetTest extends GroovyTestCase {
 
     void testUsesRatio() {
 
-        def ts = new TokenSet();
+        def ts = new TokenSet()
 
         def mock = createMock(Ratio)
 
@@ -43,7 +43,7 @@ class TokenSetTest extends GroovyTestCase {
 
     void testTokenSet() {
 
-        def ts = new TokenSet();
+        def ts = new TokenSet()
 
         assertEquals 46, ts.apply("test", "pesticide")
         assertEquals 75, ts.apply("test", "pesticide", new PartialRatio())
