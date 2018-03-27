@@ -5,11 +5,6 @@ import me.xdrop.diffutils.structs.EditType;
 import me.xdrop.diffutils.structs.MatchingBlock;
 import me.xdrop.diffutils.structs.OpCode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * This is a port of all the functions needed from python-levenshtein C implementation.
  * The code was ported line by line but unfortunately it was mostly undocumented,

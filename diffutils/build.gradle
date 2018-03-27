@@ -1,0 +1,6 @@
+plugins {
+    id 'java-library'
+    //id "com.zyxist.chainsaw" version "0.2.0"
+}
+
+//ext.moduleName = "org.zenika.handson.jigsaw.api"

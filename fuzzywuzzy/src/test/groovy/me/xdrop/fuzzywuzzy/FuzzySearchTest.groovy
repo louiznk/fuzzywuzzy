@@ -10,12 +10,11 @@ class FuzzySearchTest extends GroovyTestCase {
     def moreChoices = ["Atlanta Falcons", "New York Jets", "New York Giants", "Dallas Cowboys"]
 
 
-
     void testRatio() {
 
         assertEquals 76, FuzzySearch.ratio("mysmilarstring", "mymostsimilarstsdsdring"), 2
-        assertEquals 72, FuzzySearch.ratio("mysmilarstring","myawfullysimilarstirng"), 2
-        assertEquals 97, FuzzySearch.ratio("mysmilarstring","mysimilarstring"), 2
+        assertEquals 72, FuzzySearch.ratio("mysmilarstring", "myawfullysimilarstirng"), 2
+        assertEquals 97, FuzzySearch.ratio("mysmilarstring", "mysimilarstring"), 2
         assertEquals 75, FuzzySearch.ratio("csr", "c s r"), 2
 
     }
@@ -24,16 +23,16 @@ class FuzzySearchTest extends GroovyTestCase {
 
         assertEquals 71, FuzzySearch.partialRatio("similar", "somewhresimlrbetweenthisstring")
         assertEquals 43, FuzzySearch.partialRatio("similar", "notinheresim")
-        assertEquals 38, FuzzySearch.partialRatio("pros holdings, inc.","settlement facility dow corning trust")
-        assertEquals 33, FuzzySearch.partialRatio("Should be the same","Opposite ways go alike")
-        assertEquals 33, FuzzySearch.partialRatio("Opposite ways go alike" , "Should be the same")
+        assertEquals 38, FuzzySearch.partialRatio("pros holdings, inc.", "settlement facility dow corning trust")
+        assertEquals 33, FuzzySearch.partialRatio("Should be the same", "Opposite ways go alike")
+        assertEquals 33, FuzzySearch.partialRatio("Opposite ways go alike", "Should be the same")
 
     }
 
     void testTokenSortPartial() {
 
-        assertEquals 67, FuzzySearch.tokenSortPartialRatio("mvn","wwwwww.mavencentral.comm")
-        assertEquals 100, FuzzySearch.tokenSortPartialRatio("  order words out of ","  words out of order")
+        assertEquals 67, FuzzySearch.tokenSortPartialRatio("mvn", "wwwwww.mavencentral.comm")
+        assertEquals 100, FuzzySearch.tokenSortPartialRatio("  order words out of ", "  words out of order")
         assertEquals 44, FuzzySearch.tokenSortPartialRatio("Testing token set ratio token", "Added another test")
 
     }
@@ -46,7 +45,7 @@ class FuzzySearchTest extends GroovyTestCase {
 
     void testTokenSetRatio() {
 
-        assertEquals 100, FuzzySearch.tokenSetRatio("fuzzy fuzzy fuzzy bear", "fuzzy was a bear" )
+        assertEquals 100, FuzzySearch.tokenSetRatio("fuzzy fuzzy fuzzy bear", "fuzzy was a bear")
         assertEquals 39, FuzzySearch.tokenSetRatio("Testing token set ratio token", "Added another test")
 
     }
@@ -54,15 +53,15 @@ class FuzzySearchTest extends GroovyTestCase {
     void testTokenSetPartial() {
 
         assertEquals 11, FuzzySearch.tokenSetPartialRatio("fuzzy was a bear", "blind 100")
-        assertEquals 67, FuzzySearch.partialRatio("chicago transit authority" , "cta")
+        assertEquals 67, FuzzySearch.partialRatio("chicago transit authority", "cta")
 
     }
 
     void testWeightedRatio() {
 
 
-        assertEquals 60, FuzzySearch.weightedRatio("mvn","wwwwww.mavencentral.comm")
-        assertEquals 40, FuzzySearch.weightedRatio("mvn","www;'l3;4;.4;23.4/23.4/234//////www.mavencentral.comm")
+        assertEquals 60, FuzzySearch.weightedRatio("mvn", "wwwwww.mavencentral.comm")
+        assertEquals 40, FuzzySearch.weightedRatio("mvn", "www;'l3;4;.4;23.4/23.4/234//////www.mavencentral.comm")
         assertEquals 97, FuzzySearch.weightedRatio("The quick brown fox jimps ofver the small lazy dog",
                 "the quick brown fox jumps over the small lazy dog")
 
@@ -105,7 +104,6 @@ class FuzzySearchTest extends GroovyTestCase {
         assert FuzzySearch.extractSorted("goolge", choices, 40).size() == 3
 
     }
-
 
 
     void testExtractOne() {

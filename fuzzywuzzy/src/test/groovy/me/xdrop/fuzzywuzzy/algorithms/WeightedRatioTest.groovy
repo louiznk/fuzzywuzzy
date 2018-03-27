@@ -9,10 +9,10 @@ class WeightedRatioTest extends GroovyTestCase {
     void testUsesStringProcessor() {
         def wr = new WeightedRatio()
 
-        def mock = mock(StringProcessor)
+        def mock = createMock(StringProcessor)
 
         expect(mock.process(eq("notthesame")))
-            .andReturn("thesame")
+                .andReturn("thesame")
 
         expect(mock.process(eq("thesame")))
                 .andReturn("thesame")

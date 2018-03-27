@@ -1,0 +1,53 @@
+allprojects {
+    group = 'me.xdrop'
+    version = '1.1.10'
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    //apply plugin: 'java-library'
+    apply plugin: 'groovy'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+
+
+    repositories {
+        jcenter()
+    }
+
+
+    dependencies {
+        testCompile "junit:junit:4.12"
+        testCompile "org.easymock:easymock:3.5.1"
+        testCompile "org.codehaus.groovy:groovy-all:2.4.14"
+    }
+
+
+    test {
+        // listen to events in the test execution lifecycle
+        beforeTest { descriptor ->
+            logger.lifecycle("Running test: " + descriptor)
+        }
+
+
+        onOutput { descriptor, event ->
+            logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message)
+        }
+
+
+        sourceSets {
+            main {
+                java {
+                    srcDirs = ["src/main/java"]
+                }
+                resources {
+                    srcDirs = ["src/main/resources"]
+                }
+            }
+        }
+    }
+
+
+}
